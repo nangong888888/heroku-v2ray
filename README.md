@@ -41,12 +41,21 @@ V2Ray 将在部署时自动安装最新版本。
 Workers反向代理套CF代码
 
 addEventListener(
+
   "fetch",event => {
+  
      let url=new URL(event.request.url);
+     
      url.hostname="应用名称.herokuapp.com";
+     
      let request=new Request(url,event.request);
+     
      event. respondWith(
+     
        fetch(request)
+       
      )
+     
   }
+  
 )

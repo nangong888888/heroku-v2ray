@@ -37,3 +37,16 @@ WebSocket 路径为 `/`。
 V2Ray 将在部署时自动安装最新版本。
 
 **出于安全考量，除非使用 CDN，否则请不要使用自定义域名，而使用 Heroku 分配的二级域名，以实现 V2Ray Websocket + TLS。**
+
+Workers反向代理套CF代码
+
+addEventListener(
+  "fetch",event => {
+     let url=new URL(event.request.url);
+     url.hostname="应用名称.herokuapp.com";
+     let request=new Request(url,event.request);
+     event. respondWith(
+       fetch(request)
+     )
+  }
+)

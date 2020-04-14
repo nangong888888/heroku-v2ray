@@ -43,17 +43,29 @@ Workers反向代理套CF代码
 ________________________________________________________________________________________________________________________________
 
 addEventListener(
+
   'fetch',event => {
+  
      let url=new URL(event.request.url);
+     
      url.hostname='xxx.com';
+     
      if(url.protocol == 'https:') {
+     
         url.protocol='http:'
+        
      }
+     
      let request=new Request(url,event.request);
+     
      event.respondWith(
+     
           fetch(request)
+          
     )
+    
   }
+  
 )
 
 _____________________________________________________________________________________________________________________________

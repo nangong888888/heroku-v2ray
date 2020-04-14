@@ -43,23 +43,17 @@ Workers反向代理套CF代码
 ________________________________________________________________________________________________________________________________
 
 addEventListener(
-
-  "fetch",event => {
-  
+  'fetch',event => {
      let url=new URL(event.request.url);
-     
-     url.hostname="应用名称.herokuapp.com";
-     
+     url.hostname='xxx.com';
+     if(url.protocol == 'https:') {
+        url.protocol='http:'
+     }
      let request=new Request(url,event.request);
-     
-     event. respondWith(
-     
-       fetch(request)
-       
-     )
-     
+     event.respondWith(
+          fetch(request)
+    )
   }
-  
 )
 
 _____________________________________________________________________________________________________________________________

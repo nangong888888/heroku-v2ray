@@ -11,17 +11,3 @@
     "repository": "https://github.com/nangong888888/heroku-v2ray",
     "stack": "container"
 }
-
-{
-    "name": "V2Ray",
-    "description": "Deploy V2ray on Heroku.",
-    "keywords": ["V2Ray"],
-    "env": {
-        "UUID1": {
-            "description": "V2Ray UUID1",
-            "value": "ad806487-2d26-4636-98b6-ab85cc1521f7"
-        }
-    },
-    "repository": "https://github.com/nangong888888/heroku-v2ray",
-    "stack": "container"
-}
